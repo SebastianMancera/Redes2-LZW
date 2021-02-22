@@ -15,7 +15,6 @@ def leer_codigo(lineas):
 
 def leer_diccionario(lineas):
     dicc = lineas[0].split("|")
-    print(dicc)
     diccionario_claves = []
     # se leen las claves del diccionario
     for lista in dicc:
@@ -130,10 +129,15 @@ def main():
     cant_letras = contador_letras(codigo)
     # se crea la matriz del tamaño de codigos existentes en el mensaje y se descomprime
     matriz = algoritmo_descompresion(codigo,diccionario, cant_letras)
+    print("Matriz de Descompresión LZW")
+    # print("C_Viejo","C_Nuevo","Cadena","Caracter","Salida")
     print(matriz)
+    print(" ")
+    print("Diccionario para Descomprimir")
     print(diccionario)
     # se obtiene en mensaje de la columna 4 (salida) de la matriz
     mensaje = obtener_mensaje(matriz)
+    print(" ")
     print(f"El mensaje obtenido es: {mensaje}")
     # se guarda mensaje en archivo
     guardar_descompresion(mensaje)
